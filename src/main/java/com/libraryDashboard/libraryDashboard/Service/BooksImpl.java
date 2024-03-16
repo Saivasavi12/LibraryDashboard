@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BooksImpl implements BooksService{
     @Autowired
-    BooksRepo booksRepo;
+    private BooksRepo booksRepo;
     @Override
     public Books createBook(Books book) {
         booksRepo.save(book);
