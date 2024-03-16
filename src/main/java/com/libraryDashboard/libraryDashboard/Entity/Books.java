@@ -1,7 +1,9 @@
 package com.libraryDashboard.libraryDashboard.Entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class Books {
     @Id
     private Long bookId;
