@@ -5,6 +5,7 @@ import com.libraryDashboard.libraryDashboard.Repository.LibraranRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Objects;
 
 public class LibrarianServiceImpl implements LibrarianService {
 
@@ -24,16 +25,29 @@ public class LibrarianServiceImpl implements LibrarianService {
 
     @Override
     public void deleteLibrarian(Long librarianId) {
-
+        libraranRepo.deleteById(librarianId);
     }
 
     @Override
     public Librarian updateLibrarian(Long librarianId, Librarian librarian) {
-        return null;
+        Librarian lib = libraranRepo.findById(librarianId).get();
+
+        if(Objects.nonNull(librarian.getLibrarianName())
+                && !"".equalsIgnoreCase(
+                librarian.getLibrarianName()))
+            lib.setLibrarianName(librarian.getLibrarianName());
+
+        if(Objects.nonNull(librarian.getEmail())
+                && !"".equalsIgnoreCase(
+                librarian.getEmail()))
+            lib.setEmail(librarian.getEmail());
+
+        return lib;
     }
 
     @Override
     public Librarian getParticularLibrarian(Long librarianId) {
-        return null;
+        Librarian lib = libraranRepo.findById(librarianId).get();
+        return lib;
     }
 }
