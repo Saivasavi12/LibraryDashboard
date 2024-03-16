@@ -1,11 +1,14 @@
 package com.libraryDashboard.libraryDashboard.Entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Books {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bookId;
     private String bookName;
     private int publicationYear;
