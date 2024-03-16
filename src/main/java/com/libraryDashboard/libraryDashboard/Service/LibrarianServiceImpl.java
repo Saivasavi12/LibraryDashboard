@@ -3,10 +3,12 @@ package com.libraryDashboard.libraryDashboard.Service;
 import com.libraryDashboard.libraryDashboard.Entity.Librarian;
 import com.libraryDashboard.libraryDashboard.Repository.LibraranRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 
+@Service
 public class LibrarianServiceImpl implements LibrarianService {
 
     @Autowired
