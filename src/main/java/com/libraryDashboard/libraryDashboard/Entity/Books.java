@@ -6,6 +6,10 @@ public class Books {
     @Id
     private Long bookId;
     private String bookName;
+    private int publicationYear;
+    private int noOfCopiesAvailable;
+    private int noOfCopiesBorrowed;
+    private String[] authors;
 
     public Long getBookId() {
         return bookId;
@@ -67,9 +71,6 @@ public class Books {
         this.authors = authors;
     }
 
-    private int publicationYear;
-    private int noOfCopiesAvailable;
-    private int noOfCopiesBorrowed;
-    private String[] authors;
+
 
 }
