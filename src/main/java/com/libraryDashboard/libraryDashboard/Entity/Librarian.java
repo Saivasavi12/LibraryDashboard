@@ -2,12 +2,15 @@ package com.libraryDashboard.libraryDashboard.Entity;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Librarian {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long librarianId;
     private String librarianName;
     private String email;
